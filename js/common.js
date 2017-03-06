@@ -33,13 +33,60 @@ Finit.prototype = {
 var fullpage_type_1 = new Finit();
 
 $(function() {
+    var fullpage_1_data = [
+        'f_1_section_img_1.png',
+        'f_1_section_img_2.png',
+        'f_1_section_img_3.png',
+        'f_1_section_img_4.png',
+        'f_1_section_img_5.png',
+        'f_1_section_img_6.png'
+    ];
+    var fullpage_2_data = [
+        'f_2_section_img_1.png',
+        'f_2_section_img_2.png',
+        'f_2_section_img_3.png',
+        'f_2_section_img_4.png',
+        'f_2_section_img_5.png',
+        'f_2_section_img_6.png'
+    ];
+    var fullpage_3_data = [
+        'f_3_section_img_1.png',
+        'f_3_section_img_2.png',
+        'f_3_section_img_3.png',
+        'f_3_section_img_4.png',
+        'f_3_section_img_5.png',
+        'f_3_section_img_5.png'
+    ];
+    var fullpage_4_data = ['f_4_section_img_1.png', 'f_4_section_img_2.png', 'f_4_section_img_3.png', 'f_4_section_img_4.png'];
+    var fullpage_5_data = ['f_5_section_img_1.png', 'f_5_section_img_2.png', 'f_5_section_img_3.png', 'f_5_section_img_4.png', 'f_5_section_img_5.png'];
+    var fullpage_6_data = [
+        'f_6_section_img_1.png',
+        'f_6_section_img_2.png',
+        'f_6_section_img_3.png',
+        'f_6_section_img_4.png',
+        'f_6_section_img_5.png',
+        'f_6_section_img_5.png'
+    ];
+    var fullpage_7_data = [
+        'f_7_section_img_1.png',
+        'f_7_section_img_2.png',
+        'f_7_section_img_3.png',
+        'f_7_section_img_4.png',
+        'f_7_section_img_5.png',
+        'f_7_section_img_5.png'
+    ];
+    //第一行
     var myFullpage1 = function() {
-        var fullpage_1_data = ['f_1_section_img_1.png', 'f_1_section_img_2.png', 'f_1_section_img_3.png', 'f_1_section_img_4.png', 'f_1_section_img_5.png'];
         fullpage_type_1.start(fullpage_1_data);
         fullpage_1();
     }
-
-
+    //第四行
+    var myFullpage4 = function() {
+        fullpage_type_1.start(fullpage_4_data);
+        fullpage_1();
+    }
+    // 第五行
+    myFullpage1();
 })
 
 var arr1 = [1, 2, 3, 4, 5];
