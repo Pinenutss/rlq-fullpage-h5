@@ -14,6 +14,7 @@
 //     fullpage_1();
 // })
 var html_1 = "";
+var html_2 = "";
 function Finit() {}
 Finit.prototype = {
     start: function(data) {
@@ -27,6 +28,14 @@ Finit.prototype = {
     },
     close: function() {
         $('#fullpage1').remove(html_1);
+    },
+    slide: function(data) {
+        $(data).each(function(i, item) {
+            html_2 += '<div class="slide" style="background-image:url(img/' + item + ')">'
+            html_2 += '<p>第' + i + '横屏</p>'
+            html_2 += '<i class=" fa fa-angle-right faa-bounce animated"></i>'
+            html_2 += '</div>'
+        });
     }
 }
 
@@ -41,6 +50,7 @@ $(function() {
         'f_1_section_img_5.png',
         'f_1_section_img_6.png'
     ];
+    var fullpage_1_data_2 = ['f_1_section_img_4.png', 'f_1_section_img_3.png', 'f_1_section_img_6.png'];
     var fullpage_2_data = [
         'f_2_section_img_1.png',
         'f_2_section_img_2.png',
@@ -49,6 +59,7 @@ $(function() {
         'f_2_section_img_5.png',
         'f_2_section_img_6.png'
     ];
+    var fullpage_2_data_2 = ['f_2_section_img_6.png', 'f_2_slide_img_1.png', 'f_2_slide_img_2.png'];
     var fullpage_3_data = [
         'f_3_section_img_1.png',
         'f_3_section_img_2.png',
@@ -73,12 +84,21 @@ $(function() {
         'f_7_section_img_3.png',
         'f_7_section_img_4.png',
         'f_7_section_img_5.png',
-        'f_7_section_img_5.png'
+        'f_7_section_img_6.png',
+        'f_7_section_img_7.png'
     ];
     //第一行
-    var myFullpage1 = function() {
+    // var myFullpage1 = function() {
+    //     fullpage_type_1.start(fullpage_1_data);
+    //     fullpage_1();
+    // }
+    //第二行
+    var myFullpage1 = function(c) {
         fullpage_type_1.start(fullpage_1_data);
-        fullpage_1();
+        fullpage_type_1.slide(fullpage_1_data_2);
+        $('.section').eq(5).append(html_2);
+        fullpage_1(c);
+        //alert(fullpage_type_1.start==fullpage_type_2.start)
     }
     //第四行
     var myFullpage4 = function() {
@@ -86,7 +106,10 @@ $(function() {
         fullpage_1();
     }
     // 第五行
-    myFullpage1();
+
+    //执行方法
+    var c=1;
+    myFullpage1(c);
 })
 
 var arr1 = [1, 2, 3, 4, 5];
@@ -99,7 +122,7 @@ var arr2 = [
 ];
 // myFullpage(3);
 
-var fullpage_1 = function() {
+var fullpage_1 = function(c) {
     $('#fullpage1').fullpage({
         css3: true,
         verticalCentered: false,
@@ -110,7 +133,7 @@ var fullpage_1 = function() {
         },
         afterLoad: function(anchorlink, index) {
             if (index == 2) {
-                animatePageTwo();
+                animatePageTwo(c);
             }
             if (index == 3) {
                 animatePageThree();
@@ -121,10 +144,13 @@ var fullpage_1 = function() {
             if (index == 5) {
                 animatePageFive();
             }
+            if (index == 6) {
+                animatePageSix();
+            }
         }
     });
 
-    function animatePageOne() {
+    function animatePageOne(c) {
         console.log(1);
     }
 
@@ -142,6 +168,9 @@ var fullpage_1 = function() {
 
     function animatePageFive() {
         console.log(5);
+    }
+    function animatePageSix() {
+        console.log(6);
     }
 }
 // var fullpage_1_data = [

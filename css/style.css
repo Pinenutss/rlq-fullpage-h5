@@ -16,9 +16,17 @@ body {
   bottom: .3rem;
   left: 50%;
   margin-left: -16px; }
+.fp-controlArrow.fp-prev{
 
+}
 .section {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover; }
+
+  .slide {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover; }
