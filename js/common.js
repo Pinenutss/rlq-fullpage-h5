@@ -20,8 +20,8 @@ Finit.prototype = {
     start: function(data) {
         $(data).each(function(i, item) {
             html_1 += '<div class="section" style="background-image:url(img/' + item + ')">'
-            html_1 += '<p>第' + i + '屏</p>'
-            html_1 += '<i class=" fa fa-angle-down faa-bounce animated"></i>'
+            //html_1 += '<p>第' + i + '屏</p>'
+            html_1 += '<i class=" fa fa-angle-down"></i>'
             html_1 += '</div>'
         });
         $('#fullpage1').append(html_1);
@@ -33,8 +33,8 @@ Finit.prototype = {
     slide: function(data) {
         $(data).each(function(i, item) {
             html_2 += '<div class="slide" style="background-image:url(img/' + item + ')">'
-            html_2 += '<p>第' + i + '横屏</p>'
-            html_2 += '<i class=" fa fa-angle-right faa-bounce animated"></i>'
+            //html_2 += '<p>第' + i + '横屏</p>'
+            html_2 += '<i class=" fa fa-angle-left faa-passing-reverse animated"></i>'
             html_2 += '</div>'
         });
     }
@@ -63,7 +63,7 @@ $(function() {
     var fullpage_4_data = ['f_4_section_img_1.jpg', 'f_4_section_img_2.jpg', 'f_4_section_img_3.jpg'];
 
     var fullpage_5_data = ['f_5_section_img_1.jpg', 'f_5_section_img_2.jpg', 'f_5_section_img_3.jpg', 'f_5_section_img_4.jpg'];
-    var fullpage_5_data_1 = ['f_5_silde_img_3.jpg', 'f_5_silde_img_2.jpg', 'f_5_silde_img_1.jpg', 'f_5_section_img_4.jpg']
+    var fullpage_5_data_1 = ['f_5_silde_img_3.jpg', 'f_5_silde_img_2.jpg', 'f_5_silde_img_1.jpg', 'f_5_section_img_3.jpg']
 
     var fullpage_6_data = ['f_6_section_img_1.jpg', 'f_6_section_img_2.jpg', 'f_6_section_img_3.jpg', 'f_6_section_img_4.jpg', 'f_6_section_img_5.jpg'];
     var fullpage_7_data = ['f_7_section_img_1.jpg', 'f_7_section_img_2.jpg', 'f_7_section_img_3.jpg', 'f_7_section_img_4.jpg', 'f_7_section_img_5.jpg'];
@@ -130,6 +130,7 @@ var fullpage_1 = function(c) {
         verticalCentered: false,
         easing: 'easeIn',
         scrollingSpeed: 350,
+        controlArrows: false,
         afterRender: function() {
             animatePageOne();
         },
@@ -141,8 +142,12 @@ var fullpage_1 = function(c) {
                 if (c == 3) {
                     $.fn.fullpage.moveTo(3, 2)
                 }
-                if(c==5){
-                  $.fn.fullpage.moveTo(5, 3)
+                if (c == 4) {
+                    $('.section').eq(2).find('.fa-angle-down').hide();
+                }
+                if (c == 5) {
+                    $.fn.fullpage.moveTo(3, 3)
+                    $('.section').eq(3).find('.fa-angle-down').hide();
                 }
                 animatePageThree();
             }
@@ -153,16 +158,28 @@ var fullpage_1 = function(c) {
                 animatePageFour();
             }
             if (index == 5) {
-
+                if (c == 1) {
+                    $('.section').eq(4).find('.fa-angle-down').hide();
+                }
                 if (c == 2) {
                     $.fn.fullpage.moveTo(5, 2)
+                    $('.section').eq(4).find('.fa-angle-down').hide();
                 }
                 if (c == 3) {
                     $.fn.fullpage.moveTo(5, 2)
                 }
+                if (c == 6) {
+                    $('.section').eq(4).find('.fa-angle-down').hide();
+                }
+                if (c == 7) {
+                    $('.section').eq(4).find('.fa-angle-down').hide();
+                }
                 animatePageFive();
             }
             if (index == 6) {
+                if (c == 3) {
+                    $('.section').eq(5).find('.fa-angle-down').hide();
+                }
                 animatePageSix();
             }
         },

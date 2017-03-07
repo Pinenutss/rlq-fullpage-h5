@@ -1,32 +1,80 @@
 body {
-  background-image: url(../img/bg.jpg);
-  background-size: cover;
-  -webkit-background-size: cover; }
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    -webkit-background-size: cover;
+}
 
 #viewport * {
-  -webkit-backface-visibility: hidden; }
-
-.section {
-  overflow: hidden; }
-
-.fa {
-  font-size: 32px;
-  color: #999;
-  position: absolute;
-  bottom: .3rem;
-  left: 50%;
-  margin-left: -16px; }
-.fp-controlArrow.fp-prev{
-
+    -webkit-backface-visibility: hidden;
 }
-.section {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover; }
 
-  .slide {
+.section {
+    overflow: hidden;
+}
+
+.fa-angle-down {
+    font-size: 32px;
+    color: #fff;
+    position: absolute;
+    bottom: .3rem;
+    left: 50%;
+    margin-left: -16px;
+    animation: down 2s infinite;
+    -webkit-animation: down 2s infinite;
+}
+
+@keyframes down {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(.2rem);
+        -webkit-transform: translateY(.2rem);
+    }
+}
+
+.fa-angle-left {
+    font-size: 32px;
+    color: #fff;
+    position: absolute;
+    bottom: .3rem;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    margin-left: -16px;
+    animation: left 2s infinite;
+    -webkit-animation: left 2s infinite;
+}
+
+@keyframes left {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-.2rem);
+        -webkit-transform: translateX(-.2rem);
+    }
+}
+
+.section {
+    position: relative;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-background-size: cover; }
+    -webkit-background-size: cover;
+}
+
+.slide {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
